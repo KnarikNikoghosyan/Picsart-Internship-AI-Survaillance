@@ -15,12 +15,7 @@ while (video_capture.isOpened()):
     ret, frame = video_capture.read()
     if ret == True:
         cv2.imshow('Frame', frame)
-        
-        key = cv2.waitKey(270)
-        
-        if key == ord('q'):
-            break
-        else:
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
         
 video_capture.release()
